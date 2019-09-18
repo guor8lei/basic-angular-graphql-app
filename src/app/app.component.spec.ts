@@ -1,11 +1,15 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
+import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [GraphQLModule, HttpClientModule],
       declarations: [
-        AppComponent
+        AppComponent, ExchangeRatesComponent,
       ],
     }).compileComponents();
   }));
