@@ -26,12 +26,12 @@ const PokemonQuery = gql`
   `;
 
 @Component({
-  selector: 'app-pokemon-name',
-  templateUrl: './pokemon-name.component.html',
-  styleUrls: ['./pokemon-name.component.css']
+  selector: 'app-pokemon-evolution',
+  templateUrl: './pokemon-evolution.component.html',
+  styleUrls: ['./pokemon-evolution.component.css']
 })
 
-export class PokemonNameComponent implements OnInit {
+export class PokemonEvolutionComponent implements OnInit {
 
   pokemon: {};
   types: {};
@@ -56,3 +56,4 @@ export class PokemonNameComponent implements OnInit {
   }
 
 }
+

@@ -5,14 +5,14 @@ import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { CoffeeShopComponent } from './coffee-shop/coffee-shop.component';
 import { PokemonNameComponent } from './pokemon-name/pokemon-name.component';
+import { PokemonEvolutionComponent } from './pokemon-evolution/pokemon-evolution.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    CoffeeShopComponent,
-    PokemonNameComponent
+    PokemonNameComponent,
+    PokemonEvolutionComponent
   ],
   imports: [
     BrowserModule,
