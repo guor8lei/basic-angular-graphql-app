@@ -4,12 +4,12 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
+import { CoffeeShopComponent } from './coffee-shop/coffee-shop.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExchangeRatesComponent
+    CoffeeShopComponent
   ],
   imports: [
     BrowserModule,

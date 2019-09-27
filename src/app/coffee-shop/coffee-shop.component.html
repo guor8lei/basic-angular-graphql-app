@@ -1,0 +1,26 @@
+<div *ngIf="loading">
+    Loading...
+</div>
+<div *ngIf="error">
+    Error :(
+</div>
+<div *ngIf="shops">
+    <div *ngFor="let shop of shops">
+        <div class="individual-shop">
+            <a href="{{shop.url}}" class="shop-link">
+                <div class="shop-header">
+                    <h1 class="shop-name">{{shop.name}}</h1>
+                    <h1 class="shop-rating">{{shop.rating}}</h1>
+                </div>
+                <div class="shop-review">
+                    <p>Reviews ({{shop.review_count}})</p>
+                    <p>"{{shop.reviews[0].text}}"</p>
+                </div>
+                <div class="shop-address">
+                    <p>{{shop.location.address1}}</p>
+                    <p>{{shop.location.address2}}</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

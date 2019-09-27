@@ -1,22 +1,22 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { GraphQLModule } from '../graphql.module';
-import { ExchangeRatesComponent } from './exchange-rates.component';
+import { CoffeeShopComponent } from './coffee-shop.component';
 import { HttpClientModule } from '@angular/common/http';
 
-describe('ExchangeRatesComponent', () => {
-  let component: ExchangeRatesComponent;
-  let fixture: ComponentFixture<ExchangeRatesComponent>;
+describe('CoffeeShopComponent', () => {
+  let component: CoffeeShopComponent;
+  let fixture: ComponentFixture<CoffeeShopComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [GraphQLModule, HttpClientModule],
-      declarations: [ ExchangeRatesComponent ]
+      declarations: [ CoffeeShopComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ExchangeRatesComponent);
+    fixture = TestBed.createComponent(CoffeeShopComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
+import { CoffeeShopComponent } from './coffee-shop/coffee-shop.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,7 +9,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [GraphQLModule, HttpClientModule],
       declarations: [
-        AppComponent, ExchangeRatesComponent,
+        AppComponent, CoffeeShopComponent,
       ],
     }).compileComponents();
   }));
