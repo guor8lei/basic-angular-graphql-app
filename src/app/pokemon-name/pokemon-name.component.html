@@ -1,0 +1,14 @@
+<div *ngIf="pokemon" class="main">
+    <img class="image" src={{pokemon.image}} alt="pokemon image" width=250px />
+    <p>No. {{pokemon.number}}</p>
+    <p>Type(s): {{pokemon.types}}</p>
+    <p *ngIf="hasEvolution">Evolution: {{this.pokemon.evolutions[0].name}}</p>
+    <p *ngIf="!hasEvolution">Evolution: None</p>
+    <label>
+        <form>
+            <input type="text" ng-model="text" name="text" />
+            <input type="submit" id="submit" value="Submit" />
+        </form>
+    </label>
+    <p>{{pokemon.name}}</p>
+</div>

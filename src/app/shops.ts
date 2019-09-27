@@ -3,6 +3,6 @@ export class Shop {
     review_count: number;
     rating: number;
     location: {};
-    reviews: {};
+    reviews: any[];
     url: string;
 }
