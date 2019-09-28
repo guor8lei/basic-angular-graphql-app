@@ -1,10 +1,4 @@
 <div class="general">
-    <div class="game-categories">
-        <button class="button">Type</button>
-        <button class="button chosen-button">Name</button>
-        <button class="button">Evolution</button>
-    </div>
-    
     <p class="game-title">WHO'S THAT POKEMON?</p>
 
     <div *ngIf="pokemon" class="main">
@@ -15,7 +9,7 @@
         <p *ngIf="hasEvolution">Evolution: {{this.pokemon.evolutions[0].name}}</p>
         <p *ngIf="!hasEvolution">Evolution: None</p>
 
-        <form (ngSubmit)="onSubmit()" #pokeForm="ngForm">
+        <form class="forms" (ngSubmit)="onSubmit()" #pokeForm="ngForm">
             <input type="text" [(ngModel)]="pokeNameAttempt" class="input" name="name"/>
             <button type="submit" class="button">Submit</button>
         </form>
@@ -23,9 +17,8 @@
         <div [hidden]="!submitted"> 
             <p *ngIf="pokeName == pokeNameAttempt">CORRECT!</p>
             <p *ngIf="pokeName != pokeNameAttempt">INCORRECT</p>
+            <button class="button next-button" onClick="window.location.reload();">Next Pokemon</button>
             {{makingChanges()}}
         </div>
-
-        <button class="button" onClick="window.location.reload();">Next Pokemon</button>
     </div>
 </div>

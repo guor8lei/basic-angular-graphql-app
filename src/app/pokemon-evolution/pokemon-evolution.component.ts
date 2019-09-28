@@ -6,7 +6,7 @@ import { ApolloQueryResult } from 'apollo-client';
 import { POKEMON } from '../pokemon';
 
 function getPokemonName() {
-  const min = Math.ceil(0);
+  const min = Math.ceil(1);
   const max = Math.floor(151);
   const pokemonNumber = Math.floor(Math.random() * (max - min + 1)) + min;
   return POKEMON[pokemonNumber];
