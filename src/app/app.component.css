@@ -3,6 +3,12 @@
   text-align: center
 }
 
+.main {
+  padding-top: 25px;
+  margin: auto;
+  display: table;
+}
+
 .game-categories {
   margin-top: 2.5%;
 }
@@ -22,7 +28,7 @@
 }
 
 .game-title {
-  margin-bottom: 0px;
+  margin: 0px;
   font-size: 50px;
   font-weight: bold;
 }
@@ -58,4 +64,6 @@
   padding: 10px;
   border: 2px solid #0073bb;
   border-radius: 5px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 15px;
 }

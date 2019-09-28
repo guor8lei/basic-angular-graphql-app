@@ -18,6 +18,7 @@ const PokemonQuery = gql`
       number
       name
       image
+      types
       evolutions {
         name
       }
@@ -28,15 +29,26 @@ const PokemonQuery = gql`
 @Component({
   selector: 'app-pokemon-evolution',
   templateUrl: './pokemon-evolution.component.html',
-  styleUrls: ['./pokemon-evolution.component.css']
+  styleUrls: ['./pokemon-evolution.component.css', '../app.component.css']
 })
 
 export class PokemonEvolutionComponent implements OnInit {
 
   pokemon: {};
   types: {};
-  pokeName= getPokemonName();
-  hasEvolution = null;
+  pokeName: string = getPokemonName();
+  hasEvolution: string = "";
+  evoNameAttempt: string = "";
+  submitted: boolean = false;
+
+  onSubmit() {
+    this.submitted = true;
+  }
+
+  makingChanges() {
+    this.submitted = false;
+  }
+
 
   constructor(private apollo: Apollo) { }
 

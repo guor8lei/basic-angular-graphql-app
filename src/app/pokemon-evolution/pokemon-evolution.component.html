@@ -1,12 +1,35 @@
-<div *ngIf="pokemon" class="main">
-    <img src={{pokemon.image}} alt="pokemon image" height=250px />
-    <p>{{pokemon.name}}</p>
-    <p>No. {{pokemon.number}}</p>
-    <p class="types-format">Type(s): {{types}}</p>
+<div class="general">
+    <div class="game-categories">
+        <button class="button">Type</button>
+        <button class="button">Name</button>
+        <button class="button chosen-button">Evolution</button>
+    </div>
 
-    
+    <p class="game-title">NAME THAT EVOLUTION!</p>
 
-    <p>{{pokeNameAttempt}}</p>
-    <p *ngIf="hasEvolution">{{this.pokemon.evolutions[0].name}}</p>
-    <p *ngIf="!hasEvolution">None</p> 
+    <div *ngIf="pokemon" class="main">
+        <img src={{pokemon.image}} alt="pokemon image" height=250px />
+        <p>{{pokemon.name}}</p>
+        <p>No. {{pokemon.number}}</p>
+        <p class="types-format">Type(s): {{types}}</p>
+
+        <form (ngSubmit)="onSubmit()" #pokeForm="ngForm">
+            <button type="submit" class="button">No Evolution</button>
+            or&nbsp;&nbsp;
+            <input type="text" [(ngModel)]="evoNameAttempt" class="input" name="name"/>
+            <button type="submit" class="button">Submit</button>
+        </form>
+        
+        <div [hidden]="!submitted"> 
+            <p *ngIf="hasEvolution == evoNameAttempt">CORRECT!</p>
+            <p *ngIf="hasEvolution != evoNameAttempt">INCORRECT</p>
+            {{makingChanges()}}
+        </div>
+
+        <button class="button" onClick="window.location.reload();">Next Pokemon</button>
+
+        <p>{{pokeNameAttempt}}</p>
+        <p *ngIf="hasEvolution">{{this.pokemon.evolutions[0].name}}</p>
+        <p *ngIf="!hasEvolution">None</p> 
+    </div>
 </div>

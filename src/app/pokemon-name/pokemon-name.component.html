@@ -13,15 +13,18 @@
         <p class="types-format">Type(s): {{types}}</p>
         <p *ngIf="hasEvolution">Evolution: {{this.pokemon.evolutions[0].name}}</p>
         <p *ngIf="!hasEvolution">Evolution: None</p>
+
         <form (ngSubmit)="onSubmit()" #pokeForm="ngForm">
             <input type="text" [(ngModel)]="pokeNameAttempt" class="input" name="name"/>
             <button type="submit" class="button">Submit</button>
         </form>
+        
         <div [hidden]="!submitted"> 
             <p *ngIf="pokeName == pokeNameAttempt">CORRECT!</p>
             <p *ngIf="pokeName != pokeNameAttempt">INCORRECT</p>
             {{makingChanges()}}
         </div>
+
         <button class="button" onClick="window.location.reload();">Next Pokemon</button>
     </div>
 </div>
