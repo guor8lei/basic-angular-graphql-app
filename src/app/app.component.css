@@ -26,3 +26,36 @@
   font-size: 50px;
   font-weight: bold;
 }
+
+.button {
+  padding: 8px;
+  margin: 10px;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+  transition: .5s;
+  background-color: #0073bb;
+  color: white;
+  border: 2px solid #0073bb;
+  border-radius: 5px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.button:hover {
+  transition: .5s;
+  background-color: white;
+  color: #0073bb;
+}
+
+.chosen-button {
+  background-color: white;
+  color: #0073bb;
+}
+
+.input {
+  width: 150px;
+  padding: 10px;
+  border: 2px solid #0073bb;
+  border-radius: 5px;
+}

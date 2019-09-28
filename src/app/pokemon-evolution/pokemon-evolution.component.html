@@ -3,12 +3,10 @@
     <p>{{pokemon.name}}</p>
     <p>No. {{pokemon.number}}</p>
     <p class="types-format">Type(s): {{types}}</p>
-    <label>
-        <form>
-            <input type="text" ng-model="text" name="text" />
-            <input type="submit" id="submit" value="Submit" />
-        </form>
-    </label>
+
+    
+
+    <p>{{pokeNameAttempt}}</p>
     <p *ngIf="hasEvolution">{{this.pokemon.evolutions[0].name}}</p>
     <p *ngIf="!hasEvolution">None</p> 
 </div>
