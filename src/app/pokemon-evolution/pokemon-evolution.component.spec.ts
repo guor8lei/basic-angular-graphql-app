@@ -1,4 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { FormsModule } from '@angular/forms'; // <-- NgModel lives here
+import { GraphQLModule } from '../graphql.module';
+import { HttpClientModule } from '@angular/common/http';
 
 import { PokemonEvolutionComponent } from './pokemon-evolution.component';
 
@@ -8,6 +11,11 @@ describe('PokemonEvolutionComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
+      imports: [ 
+        FormsModule, 
+        GraphQLModule, 
+        HttpClientModule
+      ],
       declarations: [ PokemonEvolutionComponent ]
     })
     .compileComponents();
