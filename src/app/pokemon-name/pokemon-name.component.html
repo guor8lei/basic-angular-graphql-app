@@ -10,7 +10,8 @@
     <div *ngIf="pokemon" class="main">
         <img src={{pokemon.image}} alt="pokemon image" height=250px />
         <p>No. {{pokemon.number}}</p>
-        <p class="types-format">Type(s): {{types}}</p>
+        <p class="types-format">Type(s): {{types[0]}}</p>
+        <p *ngIf="types[1]" class="types-format">, {{types[1]}}</p>
         <p *ngIf="hasEvolution">Evolution: {{this.pokemon.evolutions[0].name}}</p>
         <p *ngIf="!hasEvolution">Evolution: None</p>
 

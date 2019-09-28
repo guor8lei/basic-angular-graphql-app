@@ -6,13 +6,17 @@ import { ApolloQueryResult } from 'apollo-client';
 import { POKEMON } from '../pokemon';
 
 function getPokemonName() {
-  const min = Math.ceil(0);
-  const max = Math.floor(151);
-  const pokemonNumber = Math.floor(Math.random() * (max - min + 1)) + min;
+  const min: number = Math.ceil(0);
+  const max: number = Math.floor(151);
+  const pokemonNumber: number = Math.floor(Math.random() * (max - min + 1)) + min;
   return POKEMON[pokemonNumber];
 }
 
-const PokemonQuery = gql`
+function splitType(types: []) {
+  types.slice()
+}
+
+const PokemonQuery: any = gql`
   query PokemonQuery($pokeName: String!) {
     pokemon(name: $pokeName) {
       number
@@ -27,18 +31,18 @@ const PokemonQuery = gql`
   `;
 
 @Component({
-  selector: 'app-pokemon-evolution',
-  templateUrl: './pokemon-evolution.component.html',
-  styleUrls: ['./pokemon-evolution.component.css', '../app.component.css']
+  selector: 'app-pokemon-type',
+  templateUrl: './pokemon-type.component.html',
+  styleUrls: ['./pokemon-type.component.css',"../app.component.css"]
 })
-
-export class PokemonEvolutionComponent implements OnInit {
+export class PokemonTypeComponent implements OnInit {
 
   pokemon: {};
   types: [];
   pokeName: string = getPokemonName();
   hasEvolution: string;
-  evoNameAttempt: string;
+  pokeType1Attempt: string;
+  pokeType2Attempt: string;
   submitted: boolean = false;
 
   onSubmit() {
@@ -48,7 +52,6 @@ export class PokemonEvolutionComponent implements OnInit {
   makingChanges() {
     this.submitted = false;
   }
-
 
   constructor(private apollo: Apollo) { }
 
@@ -68,4 +71,3 @@ export class PokemonEvolutionComponent implements OnInit {
   }
 
 }
-

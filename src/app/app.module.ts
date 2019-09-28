@@ -7,12 +7,14 @@ import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { PokemonNameComponent } from './pokemon-name/pokemon-name.component';
 import { PokemonEvolutionComponent } from './pokemon-evolution/pokemon-evolution.component';
+import { PokemonTypeComponent } from './pokemon-type/pokemon-type.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PokemonNameComponent,
-    PokemonEvolutionComponent
+    PokemonEvolutionComponent,
+    PokemonTypeComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,38 @@
+<div class="general">
+        <div class="game-categories">
+            <button class="button chosen-button">Type</button>
+            <button class="button">Name</button>
+            <button class="button">Evolution</button>
+        </div>
+        
+        <p class="game-title">GUESS IT'S TYPE!</p>
+    
+        <div *ngIf="pokemon" class="main">
+            <img src={{pokemon.image}} alt="pokemon image" height=250px />
+            <p>{{pokemon.name}}</p>
+            <p>No. {{pokemon.number}}</p>
+            <p *ngIf="hasEvolution">Evolution: {{this.pokemon.evolutions[0].name}}</p>
+            <p *ngIf="!hasEvolution">Evolution: None</p>
+    
+            <form (ngSubmit)="onSubmit()" #pokeForm="ngForm">
+                <input type="text" [(ngModel)]="pokeType1Attempt" class="input" name="type1"/>
+                <p *ngIf="types[1]" style="display: inline-block;">&nbsp;&nbsp;,&nbsp;&nbsp;</p>
+                <input *ngIf="types[1]" type="text" [(ngModel)]="pokeType2Attempt" class="input" name="type2"/>
+                <button type="submit" class="button">Submit</button>
+            </form>
+            
+            <div [hidden]="!submitted"> 
+                <p *ngIf="(((types[1] == null) && (pokeType1Attempt == types[0])) || 
+                    ((types[1] != null) &&
+                    ((pokeType1Attempt == types[1] && pokeType2Attempt == types[0]) ||
+                    (pokeType1Attempt == types[0] && pokeType2Attempt == types[1]))));
+                    else elseBlock">CORRECT!</p>
+                <ng-template #elseBlock>
+                    <p>INCORRECT</p>
+                </ng-template>
+                {{makingChanges()}}
+            </div>
+    
+            <button class="button" onClick="window.location.reload();">Next Pokemon</button>
+        </div>
+    </div>

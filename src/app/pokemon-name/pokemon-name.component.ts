@@ -4,7 +4,6 @@ import gql from 'graphql-tag';
 import { ApolloQueryResult } from 'apollo-client';
 
 import { POKEMON } from '../pokemon';
-import { AngularWaitBarrier } from 'blocking-proxy/built/lib/angular_wait_barrier';
 
 function getPokemonName() {
   const min: number = Math.ceil(0);
@@ -36,10 +35,10 @@ const PokemonQuery: any = gql`
 export class PokemonNameComponent implements OnInit {
 
   pokemon: {};
-  types: {};
+  types: [];
   pokeName: string = getPokemonName();
-  hasEvolution: string = "";
-  pokeNameAttempt: string = "";
+  hasEvolution: string;
+  pokeNameAttempt: string;
   submitted: boolean = false;
 
   onSubmit() {
