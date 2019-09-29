@@ -34,7 +34,7 @@ const PokemonQuery = gql`
 
 export class PokemonEvolutionComponent implements OnInit {
 
-  pokemon: {};
+  pokemon: [];
   types: [];
   pokeName: string = getPokemonName();
   hasEvolution: string;
