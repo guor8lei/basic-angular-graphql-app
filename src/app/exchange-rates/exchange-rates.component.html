@@ -1,4 +1,4 @@
-<p>This component is made by me! The information below is queried from a GraphQL server that gave me exchange rates:</p>
+<p>What type of pokemon are you?</p>
 
 <div *ngIf="loading">
     Loading...
@@ -6,8 +6,23 @@
   <div *ngIf="error">
     Error :(
   </div>
-  <div *ngIf="rates">
-    <div *ngFor="let rate of rates">
-      <p>{{rate.currency}}: {{rate.rate}}</p>
-    </div>
-  </div>
+  <!-- <div *ngIf="rates">
+    <p>{{rates.name}}</p>
+  </div> -->
+  <p>I like to do things last minuite</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <p>I have trouble managing my time</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <p>I like fire</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <p>I like water</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <p>I like grass for some reason</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <p>I really need help</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <p>I want to free myself of this pain</p>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <button (click)=whatAmI()>"what pokemon am I?"</button>
+  <button (click)=getMoreInfo()>"pokemon info"</button>
+
