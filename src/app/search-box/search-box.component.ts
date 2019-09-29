@@ -1,8 +1,8 @@
-import { Component, OnInit, Input } from "@angular/core";
+import { Component, OnInit, Input, Output, EventEmitter } from "@angular/core";
 import { Apollo } from "apollo-angular";
 import gql from "graphql-tag";
 import { Pokemon } from "../pokemon";
-import { NgForm, FormControl } from "@angular/forms";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-search-box",
@@ -12,7 +12,8 @@ import { NgForm, FormControl } from "@angular/forms";
 export class SearchBoxComponent implements OnInit {
   pokemonNames: Array<string>;
   @Input() selectedPokemon: Array<Pokemon>;
-  myControl = new FormControl();
+  @Output() teamReady = new EventEmitter<boolean>();
+  @Output() selectedTeam = new EventEmitter<Array<Pokemon>>();
 
   constructor(private apollo: Apollo) {}
 
@@ -83,7 +84,13 @@ export class SearchBoxComponent implements OnInit {
     // Update selected Pokemon
     const { first, second, third } = f.value;
     if (first && second && third) {
-      console.log("Full team!");
+      // TODO: only replace Pokemon that have changed
+      this.selectedPokemon = [];
+      this.getPokemon(first);
+      this.getPokemon(second);
+      this.getPokemon(third);
+      this.teamReady.emit(true);
+      this.selectedTeam.emit(this.selectedPokemon);
     }
   }
 }

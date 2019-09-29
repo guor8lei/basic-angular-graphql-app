@@ -1,4 +1,12 @@
 <div class="centered-form">
+  <div *ngIf="teamReady" style="float: right;margin-left: 100px">
+    <app-team-details [pokemons]="selectedPokemon"></app-team-details>
+  </div>
+
   <h1>My Team</h1>
-  <app-search-box [selectedPokemon]="selectedPokemon"></app-search-box>
+  <app-search-box
+    (teamReady)="updateTeamStatus($event)"
+    (selectedTeam)="updateTeam($event)"
+    [selectedPokemon]="selectedPokemon"
+  ></app-search-box>
 </div>
