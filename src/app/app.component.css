@@ -7,13 +7,18 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  html {
+    margin: 0px;
+  }
+
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    margin: 8px 0;
+    margin: 0 0;
   }
 
   p {
@@ -26,7 +31,7 @@
 
   .toolbar {
     height: 60px;
-    margin: -8px;
+    margin: 0px;
     display: flex;
     align-items: center;
     background-color: #1976d2;
@@ -283,3 +288,7 @@
       visibility: hidden;
     }
   }
+
+  /* .pokemon-info {
+    align-content: center;
+  } */

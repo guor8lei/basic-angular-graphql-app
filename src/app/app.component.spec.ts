@@ -1,15 +1,16 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
+import { PokemonInfoComponent } from './pokemon-info/pokemon-info.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      imports: [GraphQLModule, HttpClientModule],
+      imports: [GraphQLModule, HttpClientModule, FormsModule],
       declarations: [
-        AppComponent, ExchangeRatesComponent,
+        AppComponent, PokemonInfoComponent,
       ],
     }).compileComponents();
   }));
@@ -24,12 +25,5 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app.title).toEqual('bill-learning-app');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('bill-learning-app app is running!');
   });
 });
