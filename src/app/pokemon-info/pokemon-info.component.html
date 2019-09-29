@@ -1,0 +1,32 @@
+<div class="header-bar">
+  <h1 class="header-title">shitty pokedex
+  </h1>
+</div>
+ 
+ <div *ngIf="error">
+    Error :(
+  </div>
+
+<div class = "content">
+    <div class="search-bar">
+        <label>Search:
+          <input [(ngModel)]="userInput" placeholder="name"/>
+        </label>
+        <button (click)="onClickMe()" class = "search-button">Enter</button>
+      </div>
+      <div *ngIf="loading">
+          Loading...
+      </div>
+    <div *ngIf="data" >
+        <img src="{{image}}" class="poke-image">
+        <div name="text-content">
+          <p class="name-text">Name: {{name}}</p>
+          <p>Type: {{types[0]}}</p>
+          <!-- <div *ngFor="let type of types">
+            <ul>{{type}}</ul>
+          </div> -->
+          <p>Max HP: {{maxHP}}</p>
+          <p>Weight: {{weight}}</p>
+        </div>
+    </div>
+  </div>
