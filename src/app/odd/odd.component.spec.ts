@@ -23,16 +23,16 @@ describe('OddComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-// describe('findClass', () => {
-//   it('should return a classification', () => {
-//     const classed = "Weed Pokémon"
-//     let response;
-//     spyOn(OddComponent, 'findClass').and.returnValue(of(classed));
-//
-//     OddComponent.findClass().subscribe(res => {
-//       classed = res;
-//     });
-//
-//     expect(response).toEqual(classed);
-//   });
-// });
+describe('findClass', () => {
+  it('should return a classification', () => {
+    const classed = "Weed Pokémon"
+    let response;
+    spyOn(OddComponent, 'findClass').and.returnValue(of(classed));
+
+    OddComponent.findClass().subscribe(res => {
+      classed = res;
+    });
+
+    expect(response).toEqual(classed);
+  });
+});

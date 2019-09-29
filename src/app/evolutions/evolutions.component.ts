@@ -38,8 +38,8 @@ export class EvolutionsComponent implements OnInit {
       });
   }
 
-  // findCP(): Observable<object> {
-  //   const cp = this.evos.maxCP;
-  //   return of(cp);
-  // }
+  findCP(): Observable<object> {
+    const cp = this.evos.maxCP;
+    return of(cp);
+  }
 }

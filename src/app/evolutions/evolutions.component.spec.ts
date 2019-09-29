@@ -23,16 +23,16 @@ describe('EvolutionsComponent', () => {
     expect(component).toBeTruthy();
   });
 });
-// describe('findCP', () => {
-//   it('should return a maxCP', () => {
-//     const cp = 841
-//     let response;
-//     spyOn(EvolutionsComponent, 'findCP').and.returnValue(of(cp));
-//
-//     EvolutionsComponent.findCP().subscribe(res => {
-//       cp = res;
-//     });
-//
-//     expect(response).toEqual(cp);
-//   });
-// });
+describe('findCP', () => {
+  it('should return a maxCP', () => {
+    const cp = 841
+    let response;
+    spyOn(EvolutionsComponent, 'findCP').and.returnValue(of(cp));
+
+    EvolutionsComponent.findCP().subscribe(res => {
+      cp = res;
+    });
+
+    expect(response).toEqual(cp);
+  });
+});

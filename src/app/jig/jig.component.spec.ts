@@ -24,16 +24,16 @@ describe('JigComponent', () => {
   });
 });
 
-// describe('findFleeRate', () => {
-//   it('should return a fleeRate', () => {
-//     const fr = 0.1
-//     let response;
-//     spyOn(JigComponent, 'findFleeRate').and.returnValue(of(fr));
-//
-//     JigComponent.findFleeRate().subscribe(res => {
-//       fr = res;
-//     });
-//
-//     expect(response).toEqual(fr);
-//   });
-// });
+describe('findFleeRate', () => {
+  it('should return a fleeRate', () => {
+    const fr = 0.1
+    let response;
+    spyOn(JigComponent, 'findFleeRate').and.returnValue(of(fr));
+
+    JigComponent.findFleeRate().subscribe(res => {
+      fr = res;
+    });
+
+    expect(response).toEqual(fr);
+  });
+});

@@ -36,9 +36,9 @@ export class OddComponent implements OnInit {
       });
   }
 
-  // findClass(): Observable<object> {
-  //   const classed = odd.classification;
-  //   return of(classed);
-  // }
+  findClass(): Observable<object> {
+    const classed = odd.classification;
+    return of(classed);
+  }
 
 }

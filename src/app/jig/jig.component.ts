@@ -36,9 +36,9 @@ export class JigComponent implements OnInit {
       });
   }
 
-  // findFleeRate(): Observable<object> {
-  //   const fleeRate = this.jig.fleeRate;
-  //   return of(fleeRate);
-  // }
+  findFleeRate(): Observable<object> {
+    const fleeRate = this.jig.fleeRate;
+    return of(fleeRate);
+  }
 
 }
