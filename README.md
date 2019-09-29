@@ -1,3 +1,7 @@
+# Pokemon Guessing Game!
+
+Guess the type, name, or evolution of a randomly generated Gen 1 Pokemon.
+
 # BillLearningApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
