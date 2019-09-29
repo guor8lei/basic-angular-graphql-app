@@ -1,0 +1,11 @@
+<div *ngIf="loading">
+    Loading...
+  </div>
+  <div *ngIf="error">
+    Error :(
+  </div>
+  <div *ngIf="jig">
+      <p>Class: {{jig.classification}}</p>
+      <p>Types: {{jig.types}}</p>
+      <p>FleeRate: {{jig.fleeRate}}</p>
+  </div>
