@@ -7,7 +7,8 @@
     Error :(
   </div>
   <div *ngIf="rates">
-    <div *ngFor="let rate of rates">
-      <p>{{rate.currency}}: {{rate.rate}}</p>
-    </div>
+    <p>{{rates.id}}: {{rates.number}}</p>
   </div>
+  <app-personality (notify)="onNotify($event) ng-show="!showDiv""></app-personality>
+  <app-personality (notify)="onNotify($event)"></app-personality>
+  <app-personality (notify)="onNotify($event)"></app-personality>

@@ -24,4 +24,5 @@ describe('ExchangeRatesComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
 });
