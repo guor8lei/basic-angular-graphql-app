@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 import { AppComponent } from './app.component';
-import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
+import { EvolutionsComponent } from './evolutions/evolutions.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,7 +9,7 @@ describe('AppComponent', () => {
     TestBed.configureTestingModule({
       imports: [GraphQLModule, HttpClientModule],
       declarations: [
-        AppComponent, ExchangeRatesComponent,
+        AppComponent, EvolutionsComponent,
       ],
     }).compileComponents();
   }));
@@ -20,16 +20,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'bill-learning-app'`, () => {
+  it(`should have as title 'Pokémon Potpourri'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('bill-learning-app');
+    expect(app.title).toEqual('Pokémon Potpourri');
   });
 
-  it('should render title', () => {
+  it('should render title in a h1 tag', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('bill-learning-app app is running!');
+    expect(compiled.querySelector('.content span').textContent).toContain('Pokémon Potpourri app is running!');
   });
 });

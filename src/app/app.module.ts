@@ -4,12 +4,16 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
-import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
+import { EvolutionsComponent } from './evolutions/evolutions.component';
+import { JigComponent } from './jig/jig.component';
+import { OddComponent } from './odd/odd.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ExchangeRatesComponent
+    EvolutionsComponent,
+    JigComponent,
+    OddComponent,
   ],
   imports: [
     BrowserModule,
