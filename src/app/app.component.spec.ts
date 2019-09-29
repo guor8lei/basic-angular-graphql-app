@@ -1,20 +1,17 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { ExchangeRatesComponent } from './exchange-rates/exchange-rates.component';
-import { GraphQLModule } from './graphql.module';
-import { HttpClientModule } from '@angular/common/http';
+import { TestBed, async } from "@angular/core/testing";
+import { AppComponent } from "./app.component";
+import { GraphQLModule } from "./graphql.module";
+import { HttpClientModule } from "@angular/common/http";
 
-describe('AppComponent', () => {
+describe("AppComponent", () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       imports: [GraphQLModule, HttpClientModule],
-      declarations: [
-        AppComponent, ExchangeRatesComponent,
-      ],
+      declarations: [AppComponent]
     }).compileComponents();
   }));
 
-  it('should create the app', () => {
+  it("should create the app", () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
     expect(app).toBeTruthy();
@@ -23,13 +20,15 @@ describe('AppComponent', () => {
   it(`should have as title 'bill-learning-app'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('bill-learning-app');
+    expect(app.title).toEqual("bill-learning-app");
   });
 
-  it('should render title', () => {
+  it("should render title", () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.debugElement.nativeElement;
-    expect(compiled.querySelector('.content span').textContent).toContain('bill-learning-app app is running!');
+    expect(compiled.querySelector(".content span").textContent).toContain(
+      "bill-learning-app app is running!"
+    );
   });
 });

@@ -1,0 +1,57 @@
+<div style="display:flex; flex-direction: row">
+  <div>
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" novalidate>
+      <mat-form-field>
+        <input
+          matInput
+          ngModel
+          placeholder="Starter"
+          [(ngModel)]="selectedPokemon[0] && selectedPokemon[0].name"
+          (submit)="setRandomPokemon()"
+          name="first"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          ngModel
+          placeholder="Starter"
+          [(ngModel)]="selectedPokemon[1] && selectedPokemon[1].name"
+          name="second"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          ngModel
+          placeholder="Starter"
+          [(ngModel)]="selectedPokemon[2] && selectedPokemon[2].name"
+          name="third"
+        />
+      </mat-form-field>
+    </form>
+    <button mat-raised-button color="primary" (click)="onSubmit(f)">
+      Battle!
+    </button>
+    <button
+      mat-raised-button
+      color="accent"
+      style="margin-left:16px"
+      (click)="setRandomPokemon()"
+    >
+      Randomize
+    </button>
+  </div>
+
+  <div *ngIf="selectedPokemon.length > 0">
+    <div
+      *ngFor="let pokemon of selectedPokemon"
+      style="display:flex; flex-direction: column"
+    >
+      <img
+        src="{{ getImageUrl(pokemon.number) }}"
+        style="max-height: 60px; max-width: 60px; margin-bottom: 8px;"
+      />
+    </div>
+  </div>
+</div>
