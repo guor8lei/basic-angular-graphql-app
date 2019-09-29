@@ -29,7 +29,7 @@ const PokemonQuery = gql`
 @Component({
   selector: 'app-pokemon-evolution',
   templateUrl: './pokemon-evolution.component.html',
-  styleUrls: ['./pokemon-evolution.component.css', '../app.component.css']
+  styleUrls: ['./pokemon-evolution.component.css','../app.component.css']
 })
 
 export class PokemonEvolutionComponent implements OnInit {

@@ -30,4 +30,12 @@ describe('PokemonNameComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('submitted should start off false', () => {
+    expect(component.submitted).toBeFalsy();
+  });
+
+  it('there should be a pokemon name generated', () => {
+    expect(component.pokeName).toBeTruthy();
+  });
 });

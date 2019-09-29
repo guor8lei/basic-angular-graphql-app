@@ -30,4 +30,8 @@ describe('PokemonEvolutionComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+    
+  it('there should be a pokemon name generated', () => {
+    expect(component.pokeName).toBeTruthy();
+  });
 });

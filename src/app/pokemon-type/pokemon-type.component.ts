@@ -33,7 +33,7 @@ const PokemonQuery: any = gql`
 @Component({
   selector: 'app-pokemon-type',
   templateUrl: './pokemon-type.component.html',
-  styleUrls: ['./pokemon-type.component.css',"../app.component.css"]
+  styleUrls: ['./pokemon-type.component.css','../app.component.css']
 })
 export class PokemonTypeComponent implements OnInit {
 
